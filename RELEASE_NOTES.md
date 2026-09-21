@@ -1,5 +1,24 @@
 # Voxo — Release Notes
 
+## v2.0.1
+
+### Subscriptions are back
+- **Subscribe inside Voxo with Razorpay** — monthly ₹20 or yearly ₹220. Press
+  Subscribe, pay on Razorpay's secure page in your browser (UPI, cards,
+  netbanking), and Voxo unlocks by itself within a few seconds.
+- **Restore on another computer or after reinstalling** — enter your email and
+  the subscription ID from your Razorpay email (starts with `sub_`).
+- **Cancel from the Plans tab.** Voxo stays unlocked until the end of the period
+  you have paid for, and you are not charged again.
+- Works offline: after a successful check Voxo keeps working without internet
+  until 14 days past your renewal date, then checks in again.
+- Your payment details never pass through Voxo, and no payment keys are stored
+  in the app.
+
+### Downloads
+- The download server now keeps only the current version. Older installers are
+  removed when a new version is published.
+
 ## v2.0.0
 
 ### In-app updates now work
@@ -44,8 +63,6 @@ or ipconfig.co.network/voxo. Every update after that happens inside the app.
 - FFmpeg — downloaded automatically on first use if not already installed
 
 ### Known limitations
-- Subscription purchase is temporarily unavailable in this build; activation
-  codes work normally
 - macOS builds are ad-hoc signed, not notarised. On first launch, right-click
   the app and choose **Open** (once)
 
@@ -93,7 +110,5 @@ engine, so the download is a fraction of the size of a typical desktop app.
 - FFmpeg — downloaded automatically on first use if not already installed
 
 ### Known limitations
-- Subscription purchase is temporarily unavailable in this build; activation
-  codes work normally
 - macOS builds are ad-hoc signed, not notarised. On first launch, right-click
   the app and choose **Open**
