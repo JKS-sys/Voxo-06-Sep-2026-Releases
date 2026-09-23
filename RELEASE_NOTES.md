@@ -1,5 +1,51 @@
 # Voxo — Release Notes
 
+## Installing (every version)
+
+**macOS** — open the .dmg, drag Voxo to Applications, then run this once in
+Terminal, because Voxo is not signed with an Apple Developer ID:
+
+```bash
+xattr -cr /Applications/Voxo.app
+```
+
+Without it macOS says the app is damaged. Nothing else is needed, and updates
+after that install themselves.
+
+**Windows** — run the .exe installer. If SmartScreen warns about an unknown
+publisher, choose More info → Run anyway.
+
+**Linux** — `chmod +x Voxo_*.AppImage && ./Voxo_*.AppImage`, or
+`sudo apt install ./Voxo_*.deb`.
+
+**Support Voxo:** https://razorpay.me/@NSBJKS
+
+---
+
+## v2.0.2
+
+### Fixed: FFmpeg download crashed on first run
+- The download ran on the same thread as the window, so the app froze and the
+  system closed it while fetching FFmpeg (about 120 MB). It now downloads in the
+  background, with a progress line, while the rest of Voxo stays usable.
+- The file is written to disk as it arrives instead of being held in memory, so
+  low-memory machines no longer die part-way through.
+- A broken or half-finished download is deleted rather than kept, and Voxo says
+  what went wrong — no more silent failure or a corrupt FFmpeg left behind.
+- Downloads now time out instead of hanging forever, and if there is no FFmpeg
+  build for your system, Voxo tells you the one command that installs it
+  (`brew install ffmpeg`, `winget install Gyan.FFmpeg`, `sudo apt install ffmpeg`).
+
+### Releases for all three systems
+- Windows (.exe) and Linux (.AppImage and .deb) builds are now published
+  alongside macOS with every release, built automatically.
+- FFmpeg is now on the download server for Windows and Linux as well, so the
+  first-run download works there too.
+
+### Also
+- **Sponsor / Donate** button in About: https://razorpay.me/@NSBJKS
+- About now correctly says Tauri 2 and Rust instead of Electron.
+
 ## v2.0.1
 
 ### Subscriptions are back
