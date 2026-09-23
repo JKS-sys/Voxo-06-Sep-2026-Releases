@@ -1,107 +1,90 @@
-<div align="center">
-
-<img src="https://raw.githubusercontent.com/JKS-sys/Voxo-06-Sep-2026-Releases/main/icon.png" width="128" alt="Voxo">
-
 # Voxo
 
-**Local AI transcription, captions and batch media tools.**
+AI-powered transcription for **macOS, Windows and Linux**. Whisper runs on your
+own machine — your audio never leaves it.
 
-Runs on your own machine. Your audio never leaves your computer.
+Transcribe audio and video, export SRT/VTT/TXT subtitles, burn captions into
+MP4, generate word-by-word captions, per-sentence title files and narration
+scripts, and batch-process whole folders.
 
-[Download the latest release](../../releases/latest)
-
-</div>
+**This repository holds the downloads only.** The source is private.
 
 ---
 
-## What it does
+## Download
 
-- **Transcribe** audio and video with Whisper, entirely offline
-- **Auto-detect the language** — one language per file by default, so a
-  recording never comes back as a mix; or allow multiple languages when a
-  recording really is multilingual
-- **Export** SRT, VTT, timestamped and plain transcripts, per-sentence title
-  files and a TTS narration script
-- **Burn captions** directly into video
-- **Detect pauses** with a configurable threshold
-- **Batch rename** files with pattern presets
+Every file below is on the [latest release](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/latest),
+and mirrored at [ipconfig.co.network/voxo](https://ipconfig.co.network/voxo).
 
-20+ languages, including Telugu, Tamil, Hindi, Kannada, Malayalam, Marathi,
-Bengali, Gujarati, Punjabi and Urdu.
+| System | File | Notes |
+|---|---|---|
+| macOS — Apple Silicon (M1–M4) | `Voxo_<version>_aarch64.dmg` | macOS 11 or newer |
+| macOS — Intel | `Voxo_<version>_x64.dmg` | macOS 11 or newer |
+| Windows 10/11 — 64-bit | `Voxo_<version>_x64-setup.exe` | installer |
+| Linux — 64-bit | `Voxo_<version>_amd64.AppImage` | `chmod +x`, then run |
+| Linux — Debian/Ubuntu | `Voxo_<version>_amd64.deb` | `sudo apt install ./Voxo_*.deb` |
 
-## Install
+Once installed, Voxo updates itself: **Updates → Check for updates**, or
+automatically at launch. Every update is signature-checked before it is
+installed.
 
-Download the build for your platform from
-[Releases](../../releases/latest).
+### macOS: first launch
 
-| Platform | File |
-|---|---|
-| macOS (Apple Silicon) | `Voxo_<version>_aarch64.dmg` |
-| macOS (Intel) | `Voxo_<version>_x64.dmg` |
-| Windows | `Voxo_<version>_x64-setup.exe` |
-| Linux | `Voxo_<version>_amd64.AppImage` |
-
-Voxo is built with Tauri and uses your system's webview rather than bundling a
-browser engine, so the download is small.
-
-### macOS first launch
-
-Builds are ad-hoc signed rather than notarised, so macOS asks before opening
-one. Right-click the app and choose **Open**, then confirm. You only do this
-once.
-
-## Setting up Whisper
-
-Voxo uses [whisper-timestamped](https://github.com/linto-ai/whisper-timestamped)
-for transcription. Install it once:
+Voxo is not signed with an Apple Developer ID, so macOS blocks it the first
+time and may say the app is damaged. Drag Voxo to Applications, then run this
+once in Terminal:
 
 ```bash
-python3 -m venv ~/voxo-venv
-source ~/voxo-venv/bin/activate
-pip install whisper-timestamped
+xattr -cr /Applications/Voxo.app
 ```
 
-> If `pip install` fails complaining about PyTorch, your Python is newer than
-> the available wheels. Install an older one and use it for the venv — on
-> macOS, `brew install python@3.12`.
+Then open it normally. Nothing else is needed, and updates after that just work.
 
-Voxo finds a virtualenv named `venv`, `.venv` or `voxo-venv` in your home
-folder, next to the app, or in the project folder — no configuration needed.
+### Windows
 
-### FFmpeg
+SmartScreen may warn about an unknown publisher. Choose **More info → Run
+anyway**.
 
-Downloaded automatically the first time you transcribe. To install it yourself:
+### Linux
 
 ```bash
-brew install ffmpeg        # macOS
-sudo apt install ffmpeg    # Linux
+chmod +x Voxo_*.AppImage && ./Voxo_*.AppImage
 ```
 
-## Licensing
+---
 
-Voxo is free to try, with limits on transcription length, batch size and model
-choice. Unlock everything with either:
+## What you need
 
-- a **prepaid activation code** — monthly, yearly or lifetime, or
-- a **Razorpay subscription** — monthly or yearly
-  *(temporarily unavailable in the current build)*
+- **Python 3.9+** with `whisper-timestamped` — Voxo sets this up for you on
+  first use (it downloads PyTorch, about 2.5 GB, once).
+- **FFmpeg** — downloaded automatically the first time you transcribe, or use
+  your own (`brew install ffmpeg`, `winget install Gyan.FFmpeg`,
+  `sudo apt install ffmpeg`).
 
-Activation codes need the internet once. After that Voxo works entirely
-offline.
+## Free vs subscription
 
-## Updates
+The free version transcribes the first 50% of each file, one file at a time,
+with the `tiny` and `base` models.
 
-Check this releases page for new versions. Automatic in-app updates are coming
-in a later release.
+A subscription (**₹20/month** or **₹220/year**, paid through Razorpay by UPI,
+card or netbanking) unlocks full transcription, every Whisper model, burned-in
+captions, word-by-word captions, accurate mode, batch processing, batch image
+rename, TTS narration scripts and CSV export. Subscribe inside the app under
+**Plans**. Cancel any time — access continues to the end of the paid period.
+Prepaid activation codes work too, and keep working offline.
 
-## Privacy
+## Support Voxo
 
-Transcription runs locally. Audio and video files are never uploaded. The only
-network requests Voxo makes are update checks, and licence activation or
-subscription checks.
+Voxo is made and maintained by one person. If it saves you time:
 
-## Support
+**[❤️ Sponsor / Donate — razorpay.me/@NSBJKS](https://razorpay.me/@NSBJKS)**
 
-Issues and questions: [open an issue](../../issues) · JKS.sys@icloud.com
+## Help
 
-Made by [Jagadeesh Kumar S](https://www.youtube.com/@JKS-sys) · Chennai, India
+- Release notes: [RELEASE_NOTES.md](RELEASE_NOTES.md)
+- Questions, bugs, feature requests: **JKS.sys@icloud.com**
+- More tools: [ipconfig.co.network](https://ipconfig.co.network) ·
+  [NewsCraft Studio on YouTube](https://youtube.com/@JKS-sys)
+
+Made by [Jagadeesh Kumar S](https://ipconfig.co.network/about), a creator from
+Chennai, India.
