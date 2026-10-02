@@ -1,90 +1,123 @@
-# Voxo
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="icon-dark.png">
+    <img src="icon-light.png" width="128" height="128" alt="Voxo icon">
+  </picture>
+</p>
 
-AI-powered transcription for **macOS, Windows and Linux**. Whisper runs on your
-own machine — your audio never leaves it.
+<h1 align="center">Voxo 2.0.3</h1>
 
-Transcribe audio and video, export SRT/VTT/TXT subtitles, burn captions into
-MP4, generate word-by-word captions, per-sentence title files and narration
-scripts, and batch-process whole folders.
+<p align="center">Transcription, captions and batch media tools that run on your own computer.<br>
+macOS, Windows and Linux. Audio never leaves your machine.</p>
 
-**This repository holds the downloads only.** The source is private.
+<p align="center">
+  <img src="icon-light.png" width="56" alt="Voxo light icon">&nbsp;
+  <img src="icon-dark.png" width="56" alt="Voxo dark icon">
+</p>
 
----
+## Download Voxo 2.0.3
 
-## Download
+| System | File |
+|---|---|
+| macOS — Apple silicon (M1–M4) | [Voxo_2.0.3_aarch64.dmg](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/download/v2.0.3/Voxo_2.0.3_aarch64.dmg) |
+| macOS — Intel | [Voxo_2.0.3_x64.dmg](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/download/v2.0.3/Voxo_2.0.3_x64.dmg) |
+| Windows 10/11 — 64-bit | [Voxo_2.0.3_x64-setup.exe](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/download/v2.0.3/Voxo_2.0.3_x64-setup.exe) |
+| Linux — any distribution | [Voxo_2.0.3_amd64.AppImage](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/download/v2.0.3/Voxo_2.0.3_amd64.AppImage) |
+| Linux — Debian / Ubuntu | [Voxo_2.0.3_amd64.deb](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/download/v2.0.3/Voxo_2.0.3_amd64.deb) |
 
-Every file below is on the [latest release](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/latest),
-and mirrored at [ipconfig.co.network/voxo](https://ipconfig.co.network/voxo).
+Also mirrored at [ipconfig.co.network/voxo](https://ipconfig.co.network/voxo). Once installed, Voxo updates itself.
 
-| System | File | Notes |
-|---|---|---|
-| macOS — Apple Silicon (M1–M4) | `Voxo_<version>_aarch64.dmg` | macOS 11 or newer |
-| macOS — Intel | `Voxo_<version>_x64.dmg` | macOS 11 or newer |
-| Windows 10/11 — 64-bit | `Voxo_<version>_x64-setup.exe` | installer |
-| Linux — 64-bit | `Voxo_<version>_amd64.AppImage` | `chmod +x`, then run |
-| Linux — Debian/Ubuntu | `Voxo_<version>_amd64.deb` | `sudo apt install ./Voxo_*.deb` |
-
-Once installed, Voxo updates itself: **Updates → Check for updates**, or
-automatically at launch. Every update is signature-checked before it is
-installed.
-
-### macOS: first launch
-
-Voxo is not signed with an Apple Developer ID, so macOS blocks it the first
-time and may say the app is damaged. Drag Voxo to Applications, then run this
-once in Terminal:
+**macOS:** Voxo is not signed with an Apple Developer ID. After dragging it to Applications, run once in Terminal:
 
 ```bash
 xattr -cr /Applications/Voxo.app
 ```
 
-Then open it normally. Nothing else is needed, and updates after that just work.
+**Windows:** if SmartScreen warns about an unknown publisher, choose More info → Run anyway.
+**Linux:** `chmod +x Voxo_*.AppImage && ./Voxo_*.AppImage`, or `sudo apt install ./Voxo_*.deb`.
 
-### Windows
+## Features
 
-SmartScreen may warn about an unknown publisher. Choose **More info → Run
-anyway**.
+- **Local AI transcription** — Whisper Tiny to Large v3 and Large v3 Turbo, Distil-Whisper for fast English, and language-trained models for Tamil, Hindi, Telugu, Kannada, Gujarati, Malayalam and Bengali. Download, use and delete them in the AI Models tab; models already on your computer are reused.
+- **Numbers as digits** — spoken numbers become 2024, 3,500, 49 in English, Tamil and Hindi, with exact subtitle timing.
+- **Progress you can read** — each step with percentage, time elapsed, time remaining and finish time, for one file or a whole batch.
+- **Subtitles and scripts** — SRT, VTT, timestamped and plain TXT, word-by-word captions, per-sentence title files, TTS narration scripts, captions burned into MP4.
+- **Batch rename for every file type** — files, folders or whole folder trees; templates, find and replace, case, numbering, dates; live preview with clash checks and one-click undo.
+- **AI assistant** — autocomplete, rename ideas and title/description/chapter suggestions, using free local models (Ollama, LM Studio), GitHub Models (the models behind GitHub Copilot) or any OpenAI-compatible URL.
+- **Auto-detects the language**, or pick one of 20.
+- **Sound effects and motion** — with on/off, volume, and reduced-motion respected.
+- **Light and dark** appearance, automatic or chosen.
+- **Plans** — ₹20/month or ₹220/year with Razorpay, or monthly, yearly and lifetime activation codes.
+- **Signed updates** from GitHub and Cloudflare R2, checked before they install.
 
-### Linux
+## What's new in 2.0.3
 
-```bash
-chmod +x Voxo_*.AppImage && ./Voxo_*.AppImage
-```
+### Windows and Linux builds are published again
+- Every release now builds Windows (.exe) and Linux (.AppImage, .deb) on GitHub's own
+  Windows and Linux machines and adds them to the same release, the update feed and R2.
+  Before, the build never started: the release script could not push its workflow file,
+  and the build machines had no signing key.
 
----
+### Progress you can read
+- A new progress card shows each step — prepare, pauses, language, model, transcribe,
+  numbers, write files, burn captions — with the percentage, time elapsed, time
+  remaining and the clock time it will finish. With several files it shows the batch too.
+- The percentage comes from Whisper's real position in the audio, not a guess.
+- Model, Ollama and update downloads show size, speed-based time left and elapsed time.
 
-## What you need
+### Numbers are transcribed as digits
+- Spoken numbers are written as digits: "three thousand five hundred" becomes 3,500,
+  "மூவாயிரத்து ஐநூறு" becomes 3500, "दो हज़ार चौबीस" becomes 2024 — in English, Tamil and
+  Hindi. Subtitle timings stay exact. Turn it off with "Write numbers as digits".
 
-- **Python 3.9+** with `whisper-timestamped` — Voxo sets this up for you on
-  first use (it downloads PyTorch, about 2.5 GB, once).
-- **FFmpeg** — downloaded automatically the first time you transcribe, or use
-  your own (`brew install ffmpeg`, `winget install Gyan.FFmpeg`,
-  `sudo apt install ffmpeg`).
+### Many local AI models for accurate transcription
+- New AI Models tab: download, use and delete models — Whisper Tiny to Large v3, Large v3
+  Turbo, Distil-Whisper (fast English), and language-trained models for Tamil, Hindi,
+  Telugu, Kannada, Gujarati, Malayalam and Bengali.
+- Models already downloaded by Whisper or Hugging Face on this computer are used as they
+  are — nothing is downloaded twice. Every Whisper download is checked by SHA-256.
 
-## Free vs subscription
+### AI assistant: autocomplete, rename ideas, suggestions
+- Grey autocomplete text in rename and title fields — press Tab to accept.
+- "AI suggest names" in Batch Rename, using each video's transcript when there is one.
+- "Suggest titles, description and chapters" after a transcription.
+- Runs on free local models through Ollama (download, use and uninstall them inside
+  Voxo) or LM Studio, or online with GitHub Models (the models behind GitHub Copilot)
+  or any OpenAI-compatible URL.
 
-The free version transcribes the first 50% of each file, one file at a time,
-with the `tiny` and `base` models.
+### Batch rename for every file type
+- Rename any files, whole folders, or everything inside folders (with subfolders),
+  picked or dropped. Rules: template with {name} {n} {date} {time} {folder} {text} {ext},
+  find and replace (with regular expressions), case, spaces, extension, numbering.
+- Live preview flags clashes and invalid names before anything changes. Swaps and
+  case-only renames work. Undo the last rename with one click.
 
-A subscription (**₹20/month** or **₹220/year**, paid through Razorpay by UPI,
-card or netbanking) unlocks full transcription, every Whisper model, burned-in
-captions, word-by-word captions, accurate mode, batch processing, batch image
-rename, TTS narration scripts and CSV export. Subscribe inside the app under
-**Plans**. Cancel any time — access continues to the end of the paid period.
-Prepaid activation codes work too, and keep working offline.
+### Activation codes
+- Monthly, yearly and lifetime codes. On the owner's computer a Codes tab generates any
+  number of each; the server guarantees no code is ever issued twice and strikes out
+  used ones.
 
-## Support Voxo
+### Sounds and motion
+- Sound effects for start, each step, finish, errors and downloads (Settings ⚙ → sound
+  on/off and volume), a live sound-wave drop zone, progress animations and a short
+  celebration when a batch finishes. Reduced-motion settings are respected.
 
-Voxo is made and maintained by one person. If it saves you time:
+### Fixed
+- Transcription could hang on long files: Whisper's error output was read only after
+  its normal output, so a full pipe froze both sides. Both are now read at once.
+- Cancel now stops the transcription immediately.
+- Log lines no longer repeat once per previous run.
+- Dragging files from Finder or Explorer now passes their real paths.
+- Language defaults to auto-detect again.
+- Silence and gap sliders now actually change the result.
+- Burning captions works with Windows paths.
+- Activating a code no longer freezes the window while it contacts the server.
+- About is one section: the app, its release notes, and the creator.
 
-**[❤️ Sponsor / Donate — razorpay.me/@NSBJKS](https://razorpay.me/@NSBJKS)**
+macOS: after installing, run `xattr -cr /Applications/Voxo.app` once.
 
-## Help
+## Support
 
-- Release notes: [RELEASE_NOTES.md](RELEASE_NOTES.md)
-- Questions, bugs, feature requests: **JKS.sys@icloud.com**
-- More tools: [ipconfig.co.network](https://ipconfig.co.network) ·
-  [NewsCraft Studio on YouTube](https://youtube.com/@JKS-sys)
+Questions: JKS.sys@icloud.com · Sponsor Voxo: https://razorpay.me/@NSBJKS
 
-Made by [Jagadeesh Kumar S](https://ipconfig.co.network/about), a creator from
-Chennai, India.
+Made by Jagadeesh Kumar S, creator — [youtube.com/@JKS-sys](https://youtube.com/@JKS-sys).
