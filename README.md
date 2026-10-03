@@ -5,7 +5,7 @@
   </picture>
 </p>
 
-<h1 align="center">Voxo 2.0.3</h1>
+<h1 align="center">Voxo 2.0.4</h1>
 
 <p align="center">Transcription, captions and batch media tools that run on your own computer.<br>
 macOS, Windows and Linux. Audio never leaves your machine.</p>
@@ -15,15 +15,15 @@ macOS, Windows and Linux. Audio never leaves your machine.</p>
   <img src="icon-dark.png" width="56" alt="Voxo dark icon">
 </p>
 
-## Download Voxo 2.0.3
+## Download Voxo 2.0.4
 
 | System | File |
 |---|---|
-| macOS — Apple silicon (M1–M4) | [Voxo_2.0.3_aarch64.dmg](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/download/v2.0.3/Voxo_2.0.3_aarch64.dmg) |
-| macOS — Intel | [Voxo_2.0.3_x64.dmg](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/download/v2.0.3/Voxo_2.0.3_x64.dmg) |
-| Windows 10/11 — 64-bit | [Voxo_2.0.3_x64-setup.exe](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/download/v2.0.3/Voxo_2.0.3_x64-setup.exe) |
-| Linux — any distribution | [Voxo_2.0.3_amd64.AppImage](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/download/v2.0.3/Voxo_2.0.3_amd64.AppImage) |
-| Linux — Debian / Ubuntu | [Voxo_2.0.3_amd64.deb](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/download/v2.0.3/Voxo_2.0.3_amd64.deb) |
+| macOS — Apple silicon (M1–M4) | [Voxo_2.0.4_aarch64.dmg](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/download/v2.0.4/Voxo_2.0.4_aarch64.dmg) |
+| macOS — Intel | [Voxo_2.0.4_x64.dmg](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/download/v2.0.4/Voxo_2.0.4_x64.dmg) |
+| Windows 10/11 — 64-bit | [Voxo_2.0.4_x64-setup.exe](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/download/v2.0.4/Voxo_2.0.4_x64-setup.exe) |
+| Linux — any distribution | [Voxo_2.0.4_amd64.AppImage](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/download/v2.0.4/Voxo_2.0.4_amd64.AppImage) |
+| Linux — Debian / Ubuntu | [Voxo_2.0.4_amd64.deb](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/download/v2.0.4/Voxo_2.0.4_amd64.deb) |
 
 Also mirrored at [ipconfig.co.network/voxo](https://ipconfig.co.network/voxo). Once installed, Voxo updates itself.
 
@@ -50,7 +50,33 @@ xattr -cr /Applications/Voxo.app
 - **Plans** — ₹20/month or ₹220/year with Razorpay, or monthly, yearly and lifetime activation codes.
 - **Signed updates** from GitHub and Cloudflare R2, checked before they install.
 
-## What's new in 2.0.3
+## What's new in 2.0.4
+
+### Fixed: AI Models tab and transcription in 2.0.3
+- 2.0.3 left two of its Python files out of the app, so the AI Models tab said
+  "Could not list models" and transcription could not start. All Python files are
+  bundled now, and a pre-build check refuses any release that misses one.
+
+### Activation codes work on Cloudflare's free plan
+- Voxo's server now also answers at a free workers.dev address, and the app falls back
+  to it automatically, so codes and subscriptions no longer depend on a site route.
+
+### Owner code manager
+- Live counts of total, unused, active, expired, revoked and deleted codes.
+- Every code shows its status, the computer and system that activated it, the IP
+  address and city it came from, when it was activated, when it expires (with a bar of
+  the time left), the Voxo version, and when it was last seen.
+- Delete or revoke any code, one at a time or many at once. A deleted or revoked code
+  that is in use switches that copy of Voxo back to the free plan the next time it
+  starts; an unused one can never be activated. Restore undoes either.
+- Search by code, IP, computer, city or email; filter by status.
+
+### More sound and motion
+- New sounds for deleting, locking, unlocking, opening details, notifications, tab
+  changes and accepting autocomplete, plus a soft tick on every button.
+- Pop-up notices, ripples on buttons, counting numbers, cards that rise into place,
+  and a pulsing marker on active codes.
+
 
 ### Windows and Linux builds are published again
 - Every release now builds Windows (.exe) and Linux (.AppImage, .deb) on GitHub's own
