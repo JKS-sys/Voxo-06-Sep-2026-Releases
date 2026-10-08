@@ -5,7 +5,7 @@
   </picture>
 </p>
 
-<h1 align="center">Voxo 2.0.4</h1>
+<h1 align="center">Voxo 2.0.5</h1>
 
 <p align="center">Transcription, captions and batch media tools that run on your own computer.<br>
 macOS, Windows and Linux. Audio never leaves your machine.</p>
@@ -15,19 +15,51 @@ macOS, Windows and Linux. Audio never leaves your machine.</p>
   <img src="icon-dark.png" width="56" alt="Voxo dark icon">
 </p>
 
-## Download Voxo 2.0.4
+<p align="center">
+  <a href="https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/tag/v2.0.5"><b>Download Voxo 2.0.5</b></a> ·
+  <a href="https://ipconfig.co.network/voxo"><b>Website — ipconfig.co.network/voxo</b></a> ·
+  <a href="#install-in-one-line">Install in one line</a>
+</p>
+
+<p align="center"><a href="screenshots/splash-dark.webp"><img src="screenshots/splash-dark.webp" width="640" alt="Voxo starting up"></a></p>
+
+## Install in one line
+
+**macOS or Linux** — downloads the right file for your computer, checks it and installs it:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/JKS-sys/Voxo-06-Sep-2026-Releases/main/install.sh | sh
+```
+
+**Windows 10/11** (PowerShell):
+
+```powershell
+irm https://raw.githubusercontent.com/JKS-sys/Voxo-06-Sep-2026-Releases/main/install.ps1 | iex
+```
+
+**Homebrew** (macOS) — no tap, no extra repository; the cask file comes straight from this release page:
+
+```bash
+curl -fsSLo /tmp/voxo.rb https://raw.githubusercontent.com/JKS-sys/Voxo-06-Sep-2026-Releases/main/voxo.rb && HOMEBREW_DEVELOPER=1 brew install --cask /tmp/voxo.rb
+```
+
+Homebrew 5 only installs from a file when `HOMEBREW_DEVELOPER=1` is set, and it is phasing out apps that are not
+notarized by Apple (Voxo is not yet). If that command stops working, use the curl line above — it does the same thing.
+
+## Download Voxo 2.0.5
 
 | System | File |
 |---|---|
-| macOS — Apple silicon (M1–M4) | [Voxo_2.0.4_aarch64.dmg](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/download/v2.0.4/Voxo_2.0.4_aarch64.dmg) |
-| macOS — Intel | [Voxo_2.0.4_x64.dmg](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/download/v2.0.4/Voxo_2.0.4_x64.dmg) |
-| Windows 10/11 — 64-bit | [Voxo_2.0.4_x64-setup.exe](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/download/v2.0.4/Voxo_2.0.4_x64-setup.exe) |
-| Linux — any distribution | [Voxo_2.0.4_amd64.AppImage](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/download/v2.0.4/Voxo_2.0.4_amd64.AppImage) |
-| Linux — Debian / Ubuntu | [Voxo_2.0.4_amd64.deb](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/download/v2.0.4/Voxo_2.0.4_amd64.deb) |
+| macOS — Apple silicon (M1–M4) | [Voxo_2.0.5_aarch64.dmg](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/download/v2.0.5/Voxo_2.0.5_aarch64.dmg) |
+| macOS — Intel | [Voxo_2.0.5_x64.dmg](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/download/v2.0.5/Voxo_2.0.5_x64.dmg) |
+| Windows 10/11 — 64-bit | [Voxo_2.0.5_x64-setup.exe](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/download/v2.0.5/Voxo_2.0.5_x64-setup.exe) |
+| Linux — any distribution | [Voxo_2.0.5_amd64.AppImage](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/download/v2.0.5/Voxo_2.0.5_amd64.AppImage) |
+| Linux — Debian / Ubuntu | [Voxo_2.0.5_amd64.deb](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/download/v2.0.5/Voxo_2.0.5_amd64.deb) |
 
-Also mirrored at [ipconfig.co.network/voxo](https://ipconfig.co.network/voxo). Once installed, Voxo updates itself.
+Release page: https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/tag/v2.0.5 · Also on the website: https://ipconfig.co.network/voxo · Once installed, Voxo updates itself.
 
-**macOS:** Voxo is not signed with an Apple Developer ID. After dragging it to Applications, run once in Terminal:
+**macOS:** Voxo is not signed with an Apple Developer ID. After dragging it to Applications, run once in Terminal
+(the one-line installers do this for you):
 
 ```bash
 xattr -cr /Applications/Voxo.app
@@ -35,6 +67,56 @@ xattr -cr /Applications/Voxo.app
 
 **Windows:** if SmartScreen warns about an unknown publisher, choose More info → Run anyway.
 **Linux:** `chmod +x Voxo_*.AppImage && ./Voxo_*.AppImage`, or `sudo apt install ./Voxo_*.deb`.
+
+## Screenshots
+
+### Transcribe
+
+<img src="screenshots/transcribe-dark.webp" width="860" alt="Voxo — Transcribe">
+
+Drop audio or video and watch every step — pauses, language, model, transcription, numbers — with the percentage, time elapsed, time left and the clock time it will finish. Problems from last time are offered for sending, never sent on their own.
+
+### AI Models
+
+<img src="screenshots/models-dark.webp" width="860" alt="Voxo — AI Models">
+
+Download, use and delete local Whisper models, fast English models and models trained for Tamil, Hindi, Telugu, Kannada, Gujarati, Malayalam and Bengali. The free built-in Voxo AI works for every user.
+
+### Batch Rename
+
+<img src="screenshots/rename-light.webp" width="860" alt="Voxo — Batch Rename">
+
+Rename any files, folders or whole folder trees with presets, templates, find and replace, numbering and AI-suggested names — with a live preview and one-click undo.
+
+### Plans
+
+<img src="screenshots/plans-dark.webp" width="860" alt="Voxo — Plans">
+
+₹20 a month or ₹220 a year through Razorpay, or a monthly, yearly or lifetime activation code. Basic models and the free AI stay free for everyone.
+
+### About
+
+<img src="screenshots/about-light.webp" width="860" alt="Voxo — About">
+
+The app, its release notes and the creator in one place.
+
+### Owner Panel — subscriptions
+
+<img src="screenshots/owner-subs-light.webp" width="860" alt="Voxo — Owner Panel — subscriptions">
+
+For the developer only, in its own window: every subscription with payments and invoices; grant, edit, pause, resume, cancel or delete.
+
+### Owner Panel — crash reports
+
+<img src="screenshots/owner-crashes-dark.webp" width="860" alt="Voxo — Owner Panel — crash reports">
+
+Crash reports users chose to send, grouped by cause, readable with colour, deletable and exportable as .md or .txt.
+
+### Owner Panel — activation codes
+
+<img src="screenshots/owner-codes-dark.webp" width="860" alt="Voxo — Owner Panel — activation codes">
+
+Generate monthly, yearly and lifetime codes that can never repeat; see which computer, IP and city used each one, and when it expires.
 
 ## Features
 
@@ -49,101 +131,65 @@ xattr -cr /Applications/Voxo.app
 - **Light and dark** appearance, automatic or chosen.
 - **Plans** — ₹20/month or ₹220/year with Razorpay, or monthly, yearly and lifetime activation codes.
 - **Signed updates** from GitHub and Cloudflare R2, checked before they install.
+- **Free built-in AI for every user** — Voxo AI needs no setup and no subscription; basic Whisper models stay free too.
+- **Crash reports you control** — problems are recorded on your computer and only sent if you press Send.
+- **Startup animation, six sound packs** (Soft, Crisp, Retro, Glass, Wood, Space), keyboard shortcuts (press **?**), recent-transcription history and daily milestones.
+- **Colour that means one thing everywhere** — numbers, brackets, timestamps, files, errors and successes each have their own colour (no pink), in every tab and window.
+- **One-line install** on macOS, Linux and Windows, or Homebrew without a tap.
+- **Owner Panel** (developer only, its own window): activation codes, subscriptions with full edit/cancel/pause, and crash reports with export to .md or .txt.
 
-## What's new in 2.0.4
+## What's new in 2.0.5
 
-### Fixed: AI Models tab and transcription in 2.0.3
-- 2.0.3 left two of its Python files out of the app, so the AI Models tab said
-  "Could not list models" and transcription could not start. All Python files are
-  bundled now, and a pre-build check refuses any release that misses one.
+### Owner Panel in its own window
+- The owner's computer gets an Owner Panel button that opens a separate window with an
+  Overview, activation Codes, Subscriptions and Crash reports.
+- Subscriptions: every Voxo subscription with status, payments made, next charge, payment
+  page and invoices; grant a free subscription by hand, edit email, plan, end date and note,
+  cancel now or at the end of the period, pause, resume, or delete the record. Sync pulls
+  Voxo's subscriptions from Razorpay (plans shared with other apps are filtered out).
+- Crash reports: grouped by cause ("×3 same"), searchable, readable in colour, deletable one,
+  many or all at once, and exportable as .md or .txt.
 
-### Activation codes work on Cloudflare's free plan
-- Voxo's server now also answers at a free workers.dev address, and the app falls back
-  to it automatically, so codes and subscriptions no longer depend on a site route.
+### Crash reports you control
+- Rust panics, JavaScript errors, unhandled promise errors, panel errors and macOS crash logs
+  are recorded on your computer. Next launch, Voxo shows them and sends only what you choose,
+  with an optional note; your home folder is replaced by ~. A failing panel now shows a
+  "Try again" card instead of blanking the whole window.
 
-### Owner code manager
-- Live counts of total, unused, active, expired, revoked and deleted codes.
-- Every code shows its status, the computer and system that activated it, the IP
-  address and city it came from, when it was activated, when it expires (with a bar of
-  the time left), the Voxo version, and when it was last seen.
-- Delete or revoke any code, one at a time or many at once. A deleted or revoked code
-  that is in use switches that copy of Voxo back to the free plan the next time it
-  starts; an unused one can never be activated. Restore undoes either.
-- Search by code, IP, computer, city or email; filter by status.
+### Free AI for everyone
+- Voxo AI is built in and free for every user, paid or not — autocomplete, rename ideas and
+  title/description/chapter suggestions work with no setup. Basic Whisper models stay free.
 
-### More sound and motion
-- New sounds for deleting, locking, unlocking, opening details, notifications, tab
-  changes and accepting autocomplete, plus a soft tick on every button.
-- Pop-up notices, ripples on buttons, counting numbers, cards that rise into place,
-  and a pulsing marker on active codes.
+### Startup animation, more sound and colour
+- A startup animation with its own sound (any key skips it; it can be turned off or replayed
+  in Settings ⚙).
+- Six sound packs — Soft, Crisp, Retro, Glass, Wood, Space — plus new sounds for sending,
+  exporting, copying, cleaning and milestones.
+- Colour means one thing everywhere, with no pink: numbers cyan, brackets violet, timestamps
+  teal, quoted text amber, files blue, success green, errors red, warnings orange, and one
+  colour per file type — in logs, file lists, crash reports and the Owner Panel.
 
+### More features
+- Recent transcriptions list with Open folder and Copy text.
+- Daily milestones (1st, 3rd, 5th, 10th, 25th file) with a fanfare.
+- Keyboard shortcuts: ⌘/Ctrl O add files, ⌘/Ctrl Enter start, Esc cancel, ⌘/Ctrl 1–6 tabs,
+  ⌥⌘S sounds, ⌘/Ctrl , settings, ? for the list.
 
-### Windows and Linux builds are published again
-- Every release now builds Windows (.exe) and Linux (.AppImage, .deb) on GitHub's own
-  Windows and Linux machines and adds them to the same release, the update feed and R2.
-  Before, the build never started: the release script could not push its workflow file,
-  and the build machines had no signing key.
+### Smaller and easier to install
+- About 1.6 MB smaller: unused images and a file plugin removed from the app.
+- Install in one line: `curl -fsSL …/install.sh | sh` (macOS, Linux), `irm …/install.ps1 | iex`
+  (Windows), or Homebrew without a tap. The GitHub page now has screenshots with descriptions
+  and links to the release and to ipconfig.co.network/voxo.
+- After a release finishes, older installers are removed from GitHub (release pages and notes
+  stay).
 
-### Progress you can read
-- A new progress card shows each step — prepare, pauses, language, model, transcribe,
-  numbers, write files, burn captions — with the percentage, time elapsed, time
-  remaining and the clock time it will finish. With several files it shows the batch too.
-- The percentage comes from Whisper's real position in the audio, not a guess.
-- Model, Ollama and update downloads show size, speed-based time left and elapsed time.
-
-### Numbers are transcribed as digits
-- Spoken numbers are written as digits: "three thousand five hundred" becomes 3,500,
-  "மூவாயிரத்து ஐநூறு" becomes 3500, "दो हज़ार चौबीस" becomes 2024 — in English, Tamil and
-  Hindi. Subtitle timings stay exact. Turn it off with "Write numbers as digits".
-
-### Many local AI models for accurate transcription
-- New AI Models tab: download, use and delete models — Whisper Tiny to Large v3, Large v3
-  Turbo, Distil-Whisper (fast English), and language-trained models for Tamil, Hindi,
-  Telugu, Kannada, Gujarati, Malayalam and Bengali.
-- Models already downloaded by Whisper or Hugging Face on this computer are used as they
-  are — nothing is downloaded twice. Every Whisper download is checked by SHA-256.
-
-### AI assistant: autocomplete, rename ideas, suggestions
-- Grey autocomplete text in rename and title fields — press Tab to accept.
-- "AI suggest names" in Batch Rename, using each video's transcript when there is one.
-- "Suggest titles, description and chapters" after a transcription.
-- Runs on free local models through Ollama (download, use and uninstall them inside
-  Voxo) or LM Studio, or online with GitHub Models (the models behind GitHub Copilot)
-  or any OpenAI-compatible URL.
-
-### Batch rename for every file type
-- Rename any files, whole folders, or everything inside folders (with subfolders),
-  picked or dropped. Rules: template with {name} {n} {date} {time} {folder} {text} {ext},
-  find and replace (with regular expressions), case, spaces, extension, numbering.
-- Live preview flags clashes and invalid names before anything changes. Swaps and
-  case-only renames work. Undo the last rename with one click.
-
-### Activation codes
-- Monthly, yearly and lifetime codes. On the owner's computer a Codes tab generates any
-  number of each; the server guarantees no code is ever issued twice and strikes out
-  used ones.
-
-### Sounds and motion
-- Sound effects for start, each step, finish, errors and downloads (Settings ⚙ → sound
-  on/off and volume), a live sound-wave drop zone, progress animations and a short
-  celebration when a batch finishes. Reduced-motion settings are respected.
-
-### Fixed
-- Transcription could hang on long files: Whisper's error output was read only after
-  its normal output, so a full pipe froze both sides. Both are now read at once.
-- Cancel now stops the transcription immediately.
-- Log lines no longer repeat once per previous run.
-- Dragging files from Finder or Explorer now passes their real paths.
-- Language defaults to auto-detect again.
-- Silence and gap sliders now actually change the result.
-- Burning captions works with Windows paths.
-- Activating a code no longer freezes the window while it contacts the server.
-- About is one section: the app, its release notes, and the creator.
+### Privacy
+- The server now stores a hash of your computer's id instead of its serial number.
 
 macOS: after installing, run `xattr -cr /Applications/Voxo.app` once.
 
 ## Support
 
-Questions: JKS.sys@icloud.com · Sponsor Voxo: https://razorpay.me/@NSBJKS
+Questions: JKS.sys@icloud.com · Sponsor Voxo: https://razorpay.me/@NSBJKS · Website: https://ipconfig.co.network/voxo
 
 Made by Jagadeesh Kumar S, creator — [youtube.com/@JKS-sys](https://youtube.com/@JKS-sys).
