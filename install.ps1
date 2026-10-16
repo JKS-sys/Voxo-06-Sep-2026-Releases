@@ -7,7 +7,10 @@ $r2 = 'https://ipconfig.co.network/updates/voxo'
 try { $feed = Invoke-RestMethod "$gh/latest/download/latest.json" } catch { $feed = Invoke-RestMethod "$r2/latest.json" }
 $v = $feed.version
 Write-Host "==> Voxo $v" -ForegroundColor Cyan
-$f = "Voxo_${v}_x64-setup.exe"
+# ARM64 Windows gets the native build when this release has one (the feed lists windows-aarch64).
+$arch = 'x64'
+if ($env:PROCESSOR_ARCHITECTURE -eq 'ARM64' -and $feed.platforms.PSObject.Properties.Name -contains 'windows-aarch64') { $arch = 'arm64' }
+$f = "Voxo_${v}_${arch}-setup.exe"
 $out = Join-Path $env:TEMP $f
 try { Invoke-WebRequest "$gh/download/v$v/$f" -OutFile $out -UseBasicParsing } catch { Invoke-WebRequest "$r2/$f" -OutFile $out -UseBasicParsing }
 Write-Host "==> Installing (if SmartScreen asks: More info -> Run anyway)" -ForegroundColor Cyan
