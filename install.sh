@@ -36,17 +36,25 @@ case "$(uname -s)" in
     say "Done — open Voxo from $DEST (or: open -a Voxo)"
     ;;
   Linux)
-    [ "$(uname -m)" = x86_64 ] || die "Voxo for Linux is built for x86_64 only right now"
+    # ChromeOS: this runs inside its Linux development environment (Crostini) and installs the .deb.
+    case "$(uname -m)" in x86_64|amd64) A=amd64 ;; aarch64|arm64) A=arm64 ;; *) die "Voxo for Linux is built for x86_64 and ARM64" ;; esac
     if command -v apt-get >/dev/null 2>&1 && command -v sudo >/dev/null 2>&1; then
-      F="Voxo_${V}_amd64.deb"; get "$F"
+      F="Voxo_${V}_${A}.deb"; get "$F"
       say "Installing $F (asks for your password)"
       sudo apt-get install -y "$TMP/$F"
       say "Done — run: voxo"
     else
-      F="Voxo_${V}_amd64.AppImage"; get "$F"
+      F="Voxo_${V}_${A}.AppImage"; get "$F"
       mkdir -p "$HOME/.local/bin"; install -m 755 "$TMP/$F" "$HOME/.local/bin/voxo"
       say "Done — run: ~/.local/bin/voxo"
     fi
+    ;;
+  FreeBSD)
+    F="Voxo_${V}_freebsd_amd64.tar.gz"; get "$F"
+    DEST="$HOME/.local/share/voxo"; rm -rf "$DEST"; mkdir -p "$DEST" "$HOME/.local/bin"
+    tar -xzf "$TMP/$F" -C "$DEST" --strip-components=1
+    ln -sf "$DEST/voxo" "$HOME/.local/bin/voxo"
+    say "Done — needs: pkg install gtk3 webkit2-gtk_41 libsoup3 python311 ffmpeg   then run: ~/.local/bin/voxo"
     ;;
   *) die "on Windows use:  irm https://raw.githubusercontent.com/$REPO/main/install.ps1 | iex" ;;
 esac
