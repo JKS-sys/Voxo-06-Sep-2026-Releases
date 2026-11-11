@@ -5,7 +5,7 @@
   </picture>
 </p>
 
-<h1 align="center">Voxo 2.0.6</h1>
+<h1 align="center">Voxo 2.0.7</h1>
 
 <p align="center">Transcription, captions and batch media tools that run on your own computer.<br>
 macOS, Windows, Linux, ChromeOS and FreeBSD. Audio never leaves your machine.</p>
@@ -18,7 +18,7 @@ macOS, Windows, Linux, ChromeOS and FreeBSD. Audio never leaves your machine.</p
 </p>
 
 <p align="center">
-  <a href="https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/tag/v2.0.6"><b>Download Voxo 2.0.6</b></a> ·
+  <a href="https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/tag/v2.0.7"><b>Download Voxo 2.0.7</b></a> ·
   <a href="https://ipconfig.co.network/voxo"><b>Website — ipconfig.co.network/voxo</b></a> ·
   <a href="#install-in-one-line">Install in one line</a>
 </p>
@@ -46,17 +46,14 @@ curl -fsSL https://raw.githubusercontent.com/JKS-sys/Voxo-06-Sep-2026-Releases/m
 irm https://raw.githubusercontent.com/JKS-sys/Voxo-06-Sep-2026-Releases/main/install.ps1 | iex
 ```
 
-## Download Voxo 2.0.6
+## Download Voxo 2.0.7
 
 | System | File |
 |---|---|
-| macOS — Apple silicon (M1–M4) | [Voxo_2.0.6_aarch64.dmg](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/download/v2.0.6/Voxo_2.0.6_aarch64.dmg) |
-| macOS — Intel | [Voxo_2.0.6_x64.dmg](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/download/v2.0.6/Voxo_2.0.6_x64.dmg) |
-| Windows 10/11 — x64 | [Voxo_2.0.6_x64-setup.exe](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/download/v2.0.6/Voxo_2.0.6_x64-setup.exe) |
-| Linux ARM64 — any distribution | [Voxo_2.0.6_arm64.AppImage](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/download/v2.0.6/Voxo_2.0.6_arm64.AppImage) |
-| Linux ARM64 — Debian / Ubuntu | [Voxo_2.0.6_arm64.deb](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/download/v2.0.6/Voxo_2.0.6_arm64.deb) |
+| macOS — Apple silicon (M1–M4) | [Voxo_2.0.7_aarch64.dmg](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/download/v2.0.7/Voxo_2.0.7_aarch64.dmg) |
+| macOS — Intel | [Voxo_2.0.7_x64.dmg](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/download/v2.0.7/Voxo_2.0.7_x64.dmg) |
 
-Release page: https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/tag/v2.0.6 · Also on the website: https://ipconfig.co.network/voxo · Once installed, Voxo updates itself.
+Release page: https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/tag/v2.0.7 · Also on the website: https://ipconfig.co.network/voxo · Once installed, Voxo updates itself.
 
 **macOS:** Voxo is not signed with an Apple Developer ID. After dragging it to Applications, run once in Terminal
 (the one-line installers do this for you):
@@ -191,70 +188,15 @@ For the developer only, in its own window and always connected to the ipconfig d
 - **Crash reports you control** — recorded on your computer and only sent if you press Send.
 - **Owner Panel** (developer only, its own window, always connected to the ipconfig dashboard): activation codes, subscriptions, crash reports, users, seats and computers.
 
-## What's new in 2.0.6
+## What's new in 2.0.7
 
-### One account for Pro bought anywhere
-- New Sign in (Account once signed in) after About: sign in with a 6-digit email code or a
-  password. Pro from the shop, a Razorpay subscription, a gift or activation code lives on
-  your account and follows you to two computers (three with lifetime).
-- Each computer gets an Ed25519-signed licence, checked inside Voxo every 12 hours and valid
-  offline for 14 days. See your computers and free a seat, redeem codes, see and cancel
-  subscriptions, and link an older subscription by its sub_ id.
-- Bought before? Your old activation code or subscription moves to your account when you
-  sign in, and keeps working until it ends either way.
-- New subscriptions use the new ₹20/month and ₹220/year plans, and are put on your account when you are signed in.
-
-### Menu bar, Dock, Finder and notifications
-- Choose where Voxo lives: Dock and menu bar, Dock only, menu bar only, or in the background
-  with no icon. Closing the last window quits Voxo whenever it is in the Dock; only menu-bar
-  and background modes can keep running (and that can be switched off).
-- Menu-bar icon: left click opens a quick panel with live ↓ download / ↑ upload speed, a
-  speed test and twelve one-click actions; right click opens the full menu; double click shows
-  the window. Optional live ↓/↑ speed next to the icon.
-- Dock icon menu: New Window, Add Media Files, Transcribe in a New Window, Start / Cancel,
-  Batch Rename, Remove Words, Recent Transcripts and every menu group.
-- Finder right-click: Transcribe with Voxo, Transcribe in a New Voxo Window, Batch Rename with
-  Voxo, Remove Words from Names with Voxo and Open in Voxo.
-- Desktop notifications when a long transcription finishes or an update is found — click one
-  to come straight back to Voxo. Turn them off or send a test in Settings.
-- New Window (⌘N): several Voxo windows, each with its own queue.
-
-### Batch Rename: remove many words at once
-- Type any number of words or phrases (commas or new lines), match whole words or anywhere,
-  and click the chips Voxo finds in your file names; separators left behind are tidied.
-
-### More models
-- 30 more transcription models: IISc Vaani Hindi, Telugu, Kannada and Bengali, Marathi,
-  Hinglish (Oriserve), CrisperWhisper verbatim English, and strong single-language models for
-  German, French, Japanese, Chinese, Korean, Arabic, Russian, Turkish, Persian, Hebrew, Swedish,
-  Norwegian, Finnish and Malay. Large models split into several files now download and
-  convert too.
-- 24 suggested local assistant models for Ollama, from Gemma 3 1B to gpt-oss 20B, Qwen3,
-  DeepSeek R1, Granite 4, Phi-4 mini, Gemma 4, LFM 2.5 and Mistral Small 3.2, with the memory
-  each needs.
-
-### Look, sound and small windows
-- New start-up animation: the mark draws itself, sparks fly, the name rises in colour, the
-  tagline types itself and "By Jagadeesh Kumar S" shines in — with its own sounds.
-- Right-click menus everywhere, 63 sounds each with its own self-drawing picture, ten sound
-  packs, Off / Subtle / Lively animations and eight layouts for recent transcriptions.
-- Windows from 420×260 up: tabs shrink to short names and then icons; nothing overlaps and
-  nothing scrolls sideways.
-
-### Owner Panel
-- Always connected to the ipconfig dashboard — no Connect or Sync buttons. Voxo says hello and
-  pushes codes, subscriptions and crashes 20 seconds after start-up and every hour (the server
-  does too), and the header shows "Connected · synced N min ago".
-- New Users, Seats and Computers tabs with search, bulk actions and JSON export; the Overview
-  adds computers, active users, Pro accounts and monthly revenue.
-
-### Releases
-- Every installer is built on the Mac — macOS (Apple silicon and Intel), Windows (x64 and
-  ARM64), Linux (x64 and ARM64, .deb and AppImage) and FreeBSD 14. ChromeOS uses the Linux .deb.
-  Haiku is not possible (Tauri has no Haiku WebView).
-- Developer ID signing, Mac App Store and Microsoft Store builds run as soon as their keys are
-  added to .env. The GitHub repositories carry 20 topics and the website link.
-- Voxo is proprietary software; About → Licence shows the terms.
+- **Apple silicon only.** Voxo now builds, tests and ships for Macs with Apple silicon (M1 and later); Intel Mac, Windows, Linux and FreeBSD builds are retired.
+- **Keys from the Vault.** `update.sh` reads every credential from the ipconfig dashboard Vault (GitHub sign-in, this Mac's approved token, or APPS_API_KEY) — no `.env` needed on a new Mac. The updater key backs itself up into the Vault; `bash update.sh --vault-import` moves an old `.env` in.
+- **New log boxes.** Every log has a title bar with a live status light, counts for steps, done, warnings and problems (click to filter), Copy, Save, Expand and Clear, coloured line kinds with icons, a running progress stripe, and a sound + scene when the work finishes or hits a problem.
+- **More colour.** Brackets are coloured by nesting depth; links, units (MB, ms, Mb/s), `--flags` and `#hex` colours each get their own colour — still no pink.
+- **20 sound packs** (new: Harp, Water drops, Kalimba, Chiptune, Cello, Zen, Bubble pop, Studio, Aurora, Tape) and 7 new sounds, each with its scene.
+- **Problem reports.** JavaScript errors are capped at 5 an hour and recorded once each; at most 50 wait on disk. The owner's Mac sends its reports straight away.
+- **Lighter dashboard sync.** Every 6 hours, and only what changed — far fewer writes on the dashboard.
 
 macOS: after installing, run `xattr -cr /Applications/Voxo.app` once.
 
