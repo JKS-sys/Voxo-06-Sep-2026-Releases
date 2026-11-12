@@ -5,7 +5,7 @@
   </picture>
 </p>
 
-<h1 align="center">Voxo 2.0.8</h1>
+<h1 align="center">Voxo 2.0.9</h1>
 
 <p align="center">Transcription, captions and batch media tools that run on your own computer.<br>
 macOS, Windows, Linux, ChromeOS and FreeBSD. Audio never leaves your machine.</p>
@@ -18,7 +18,7 @@ macOS, Windows, Linux, ChromeOS and FreeBSD. Audio never leaves your machine.</p
 </p>
 
 <p align="center">
-  <a href="https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/tag/v2.0.8"><b>Download Voxo 2.0.8</b></a> ·
+  <a href="https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/tag/v2.0.9"><b>Download Voxo 2.0.9</b></a> ·
   <a href="https://ipconfig.co.network/voxo"><b>Website — ipconfig.co.network/voxo</b></a> ·
   <a href="#install-in-one-line">Install in one line</a>
 </p>
@@ -46,14 +46,14 @@ curl -fsSL https://raw.githubusercontent.com/JKS-sys/Voxo-06-Sep-2026-Releases/m
 irm https://raw.githubusercontent.com/JKS-sys/Voxo-06-Sep-2026-Releases/main/install.ps1 | iex
 ```
 
-## Download Voxo 2.0.8
+## Download Voxo 2.0.9
 
 | System | File |
 |---|---|
-| macOS — Apple silicon (M1–M4) | [Voxo_2.0.8_aarch64.dmg](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/download/v2.0.8/Voxo_2.0.8_aarch64.dmg) |
-| macOS — Intel | [Voxo_2.0.8_x64.dmg](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/download/v2.0.8/Voxo_2.0.8_x64.dmg) |
+| macOS — Apple silicon (M1–M4) | [Voxo_2.0.9_aarch64.dmg](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/download/v2.0.9/Voxo_2.0.9_aarch64.dmg) |
+| macOS — Intel | [Voxo_2.0.9_x64.dmg](https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/download/v2.0.9/Voxo_2.0.9_x64.dmg) |
 
-Release page: https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/tag/v2.0.8 · Also on the website: https://ipconfig.co.network/voxo · Once installed, Voxo updates itself.
+Release page: https://github.com/JKS-sys/Voxo-06-Sep-2026-Releases/releases/tag/v2.0.9 · Also on the website: https://ipconfig.co.network/voxo · Once installed, Voxo updates itself.
 
 **macOS:** Voxo is not signed with an Apple Developer ID. After dragging it to Applications, run once in Terminal
 (the one-line installers do this for you):
@@ -188,16 +188,13 @@ For the developer only, in its own window and always connected to the ipconfig d
 - **Crash reports you control** — recorded on your computer and only sent if you press Send.
 - **Owner Panel** (developer only, its own window, always connected to the ipconfig dashboard): activation codes, subscriptions, crash reports, users, seats and computers.
 
-## What's new in 2.0.8
+## What's new in 2.0.9
 
-- **Tools installed with Pour are found.** Voxo now looks for ffmpeg, ffprobe, Python and Ollama in Pour's folders (`~/.pour`, `/opt/pour`, `/usr/local/pour`, `$POUR_PREFIX`, including kegs that are not linked) and asks your login shell as a last step. A broken downloaded copy no longer hides a working one.
-- **Every AI model on this Mac.** Models → *On this Mac* lists what any app downloaded: Ollama (also when it is not running), LM Studio, Hugging Face and MLX, Whisper, whisper.cpp, MacWhisper, WhisperKit, GPT4All, Jan and Msty — with sizes, search and Show in Finder.
-- **The house theme.** Warm black, gold and warm white, the same as Keel, Nib and Swep; Libre Baskerville is bundled and set in its regular (lighter) weight.
-- **New start-up.** Sound bars rise, fold into the icon with a ring burst, the name arrives with a gold shine, four chips draw themselves, then the byline.
-- **Better logs.** Find with highlighted matches, line numbers and times, a running clock, Follow / Wrap / Times switches, "First problem", an activity strip you can click, and a summary footer.
-- **Owner Panel analysis.** A world map shaded by computers per country with pulsing dots and the top countries, plus new computers, activations, sign-ups and crashes per day and rings for versions, plans, systems and subscriptions.
-- **Nothing overlaps** when the window shrinks: rows wrap, long names shorten, tables scroll.
-- **Faster to open.** Models, Rename and Account load when first opened; the map loads only in the Owner Panel.
+### Changes
+- Other: `CHANGELOG.md`, `latest.json`
+- Transcription: `voxo_models.py`
+- App engine (Rust): `extra.rs`, `main.rs`
+- Interface: `App.css`, `ModelsTab.jsx`, `bridge-install.js`
 
 macOS: after installing, run `xattr -cr /Applications/Voxo.app` once.
 
